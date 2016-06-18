@@ -18,3 +18,19 @@ The tidy\_averages.csv contains the following variables:
 - label - descriptive name of activity performed
 - variable - name of each mean and std variables from the original data set
 - average - average value of each of the variables per subject per activity
+
+Steps performed to prepare the tidy data set:
+- Merge the training and the test sets to create one data set.
+- Start by reading column names into a vector - read.table reads a table, but we only need the second column
+- for test data - read and merge into one data frame: subject IDs, their data readings, and activity labels; before merging - extract only mean and standard deviation columns from data readings
+- for training data - read and merge into one data frame: subject IDs, their data readings, and activity labels; before merging - extract only mean and standard deviation columns from data readings
+- merge test and training data into one complete data data frame
+- free up memory - remove all intermediate data frames and vectors
+- load activity names
+- merge two data frames (complete data set and activity names)
+- remove non descriptive column (activity ids)
+- clean names of variables: remove dots, change to lower case
+- melt dataset (by subject and activity label)
+- group the dataset: first by subject and label, and then by each variable
+- summarise grouped dataset, so that means are shown
+- write two files: full_data_set.csv with complete data set, tidy_averages.csv with tidy data set
