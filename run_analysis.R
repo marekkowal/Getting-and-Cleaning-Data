@@ -52,3 +52,4 @@ datameansdf <- summarise(grouped2, average=mean(value))
 
 write.csv(completedatasetdf, file = "full_data_set.csv")
 write.csv(datameansdf, file = "tidy_averages.csv")
+write.table(datameansdf, file = "tidy_averages_table.txt", row.name = FALSE)
